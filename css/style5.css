@@ -1,0 +1,779 @@
+
+/*------------------------------------*\
+    Flaunt JS Navigation
+\*------------------------------------*/
+
+.nav {
+	position:relative;
+	display:inline-block;
+	font-size:14px;
+	font-weight:900;
+	cursor: pointer;
+}
+
+.nav-list {
+	text-align:left;
+}
+
+.nav-item {
+	float:left;
+	*display:inline;
+	zoom:1;
+	position:relative;
+}
+
+/* Bigscreen Settings */
+.nav-item a {
+	display:block;
+	color:#FFF;
+	padding:15px 20px;
+	/* Bigscreen Button/Links background colors */
+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#222',GradientType=0 ); /* IE6-9 */
+	/*border-bottom:1px solid #8B2870;*/
+	font-family: Tahoma;
+	font-size: 14px;
+	font-weight: normal;
+	border-left: 1px solid #1D1D1B;
+	box-shadow: 0px 0px 0px #333 inset, 0px 0px 0px #333;
+	width: 140px;
+	text-align: center;
+	/*border: 0px solid #444;*/
+	border-radius: 0px;
+	height: 50px;
+	margin-left: 0px;
+	margin-top: 0px;
+}
+
+
+.nav-item:last-child > a {
+border-right: 1px solid #1D1D1B;
+}
+
+/* Bigscreen Button/Links/Text hover colors */
+.nav-item > a:hover {
+	
+	background: #111; /* Old browsers */
+	background: -moz-linear-gradient(top,  #111 0%, #111 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#111), color-stop(100%,#111)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #111 0%,#111 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #111 0%,#111 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #111 0%,#111 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #111 0%,#111 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111', endColorstr='#111',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+}
+
+/* Show sub menu on hover in bigscreen view */
+.nav-item:hover .nav-submenu {
+	display:block;
+}
+
+/* Navigation submenu */
+.nav-submenu {
+	display:none;
+	position:absolute;
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+/* Bigscreen sub menu settings */
+.nav-submenu-item a {
+	/* Bigscreen sub menu Button/Links background colors */
+	background: #222; /* Old browsers */
+	background: -moz-linear-gradient(top,  #222 0%, #222 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222), color-stop(100%,#222)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #222 0%,#222 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #222 0%,#222 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #222 0%,#222 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #222 0%,#222 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#222',GradientType=0 ); /* IE6-9 */
+	border-top:1px solid #1D1D1B;
+	box-shadow:0px -0px 0px 0px #505050 !important;
+	display:block;
+	padding:17px;
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: normal;
+	width: 140px; /* Width of the bigscreen sub menu */ 
+	margin-left: 0px;
+	margin-top: 0px;
+	border-right: 0px solid #fff;
+	border-left: 0px solid #fff;
+	border-bottom: 0px solid #fff;
+}
+
+/* Bigscreen sub menu hover colors */
+.nav-submenu-item a:hover {
+	/* Bigscreen sub menu Button/Links background colors */
+	background: #111; /* Old browsers */
+	background: -moz-linear-gradient(top,  #111 0%, #111 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#111), color-stop(100%,#111)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #111 0%,#111 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #111 0%,#111 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #111 0%,#111 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #111 0%,#111 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111', endColorstr='#111',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+}
+
+/* Hide the Mobile ribbon title text from bigscreen menu */
+.ribbon_text{
+display:none; 
+position:fixed;
+text-align:left;
+width: 50px;
+height: 20px;
+margin-top: -36px;
+margin-left: 15px;
+}
+
+/* Hide the Mobile menu from bigscreen view */
+.nav-mobile {
+  border: 0 solid #666;
+  border-radius: 0;
+  cursor: pointer;
+  display: none;
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: -49px;
+  width: 100%;
+}
+/* Bigscreen sub menu open icon indicator */
+li.nav-item  > a:after {
+	font-family: "Ionicons";
+	content: "\f489"; /* The bigscreen sub menu indicator icon */
+	speak: none; /* Don't tuch */
+	-webkit-font-smoothing: antialiased; /* Don't tuch */
+	display: block; /* Don't tuch */
+	font-size: 20px; /* Size of the icon */
+	color: #FFFFFF; /* Icon color */
+	position: relative; /* Don't tuch */
+	top: -2px; /* Move icon up/down */
+	left: 0px; /* Move icon right/left */
+	font-style: normal; /* Don't tuch */
+	font-weight: normal; /* The font weight for the icon */
+	float: right;
+}
+
+/* Bigscreen sub menu close icon indicator */
+li.nav-item:hover  > a:after {
+	font-family: "Ionicons";
+	content: "\f462"; /* The bigscreen sub menu indicator icon */
+	speak: none; /* Don't tuch */
+	-webkit-font-smoothing: antialiased; /* Don't tuch */
+	display: block; /* Don't tuch */
+	font-size: 20px; /* Size of the icon */
+	color: #FFFFFF; /* Icon color */
+	position: relative; /* Don't tuch */
+	top: -2px; /* Move icon up/down */
+	left: 0px; /* Move icon right/left */
+	font-style: normal; /* Don't tuch */
+	font-weight: normal; /* The font weight for the icon */
+	float: right;
+}
+
+/* Make sure to not show the bigscreen sub menu icon indicator on links that has no sub menu */
+li.nav-item  > a:only-child:after {
+	border: none !important;
+	font-size: 0px; 
+	line-height: 0px;
+	margin-top: 0px;
+	margin-left: 0px;
+	content: '';
+}
+
+.current_yes > a, .current_yes > a:hover{ 
+background: #ff6347; /* Old browsers */
+background: -moz-linear-gradient(top,  #ff6347 0%, #ff6347 100%) ; /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff6347), color-stop(100%,#ff6347)) ; /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #ff6347 0%,#ff6347 100%) ; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #ff6347 0%,#ff6347 100%) ; /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #ff6347 0%,#ff6347 100%) ; /* IE10+ */
+background: linear-gradient(to bottom,  #ff6347 0%,#ff6347 100%) ; /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6347', endColorstr='#ff6347',GradientType=0 ); /* IE6-9 */
+color: #ffffff ; /* Text active color for the Buttons/Links in active mode and on bigscreen menu*/
+}
+
+.sub_current_yes > a, .sub_current_yes > a:hover{ 
+background: #4C89D5 ; /* Old browsers */
+background: -moz-linear-gradient(top,  #4C89D5 0%, #4C89D5 100%) !important; /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4C89D5), color-stop(100%,#4C89D5)) ; /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #4C89D5 0%,#4C89D5 100%) ; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #4C89D5 0%,#4C89D5 100%) ; /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #4C89D5 0%,#4C89D5 100%) ; /* IE10+ */
+background: linear-gradient(to bottom,  #4C89D5 0%,#4C89D5 100%) ; /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C89D5', endColorstr='#4C89D5',GradientType=0 ); /* IE6-9 */
+color: #ffffff ; /* Text active color for the Buttons/Links in active mode and on bigscreen menu*/
+/*Box-shadow turnd off none ;*/
+}
+
+/* Remove border and box shadow on active/current links */
+.current_yes > a:nth-child(1){
+box-shadow: none !important; border-top: none;
+}
+
+
+/* What page indicator (Remove later)*/
+.page_text{
+font-family: Tahoma;
+font-weight: bold;
+font-size: 22px;
+color: #fff;
+float: left;
+margin-left: 50px;
+margin-top: 0px;
+}
+
+/*------------------------------------*\
+    Media Queries
+\*------------------------------------*/
+
+@media only screen and (min-width: 240px) and (max-width: 842px) {
+
+	/* Remove the height value from .main class so that the page content is pushed down below the mobile menu */
+	.main {
+	width:100%;
+	height: 0%;
+	margin:0px 0;
+	text-align:center;
+}
+
+	/* Show Hamburger button in Mobile view */
+	.nav-mobile:after {
+	font-family: "Ionicons";
+	content: "\f394"; /* The Hamburger 3 bars icon */
+	padding: 6px; /* Make some space around the 3 bars */
+	speak: none; /* Don't tuch */
+	-webkit-font-smoothing: antialiased; /* Don't tuch */
+	display: block; /* Don't tuch */
+	font-size: 38px; /* Size of the icon (3 bars) */
+	color: #FFFFFF; /* Icon color 3 bars */
+	position: relative; /* Don't tuch */
+	line-height:24px; /* Move up/down the 3 bars */
+	Height: 24px; /* Height of the Hamburger Button */
+	top: 7px; /* Move up/down the Hamburger button */
+	right: 7px; /* Move left/right the Hamburger button */
+	border-radius: 4px; /* Hamburger button border radius */
+	float: right;
+	font-style: normal; /* Don't tuch */
+	font-weight: normal; /* The font weight for the 3 bars icon */
+}
+
+
+/* Mobile navigation, clickable area for revealing sub menu */
+	.nav-click {
+	position:absolute;
+	top:1px;
+	right:0px;
+	display:none;
+	border-left:1px solid #1D1D1B;
+	box-shadow: 0px 0px 0px #333 inset, 0px 0px 0px #333;
+	height:51px;
+	width:56px;
+	cursor:pointer;
+	background: #222;
+}
+
+/* Icon in mobile menu (clickable area for opening sub menu) */
+.nav-click > i:after {
+	font-family: "Ionicons";
+	speak: none; /* Don't tuch */
+	-webkit-font-smoothing: antialiased; /* Don't tuch */
+	content: "\f489";
+	display: inline-block; /* Don't tuch */
+	font-size: 32px; /* Size of the icon */
+	color: #FFFFFF; /* Icon color */
+	position: relative; /* Don't tuch */
+	top: 8px;
+	left: 20px;
+	font-style: normal;
+	font-weight: normal; 
+}
+
+/* Mobile navigation, clickable area for revealing sub menu */
+	.icon-close {
+	position:absolute;
+	top:1px;
+	right:0px;
+	display:none;
+	border-left:1px solid #1D1D1B;
+	box-shadow: 0px 0px 0px #333 inset, 0px 0px 0px #333;
+	height:51px;
+	width:56px;
+	cursor:pointer;
+	background: #222;
+}
+
+/* Icon in mobile menu (clickable area for closing sub menu) */
+	.icon-close > i:after {
+	font-family: "Ionicons";
+	speak: none; /* Don't tuch */
+	-webkit-font-smoothing: antialiased; /* Don't tuch */
+	content: "\f462";
+	display: inline-block; /* Don't tuch */
+	font-size: 32px; /* Size of the icon */
+	color: #FFFFFF; /* Icon color */
+	position: relative; /* Don't tuch */
+	top: 8px;
+	left: 20px;
+	font-style: normal;
+	font-weight: normal;
+}
+
+	.current_yes > .nav-click {
+	background: #FF4C4C;
+	}
+
+	.nav-submenu {
+	padding-top:0px;
+	}
+
+/* Remove plus from the mobile link texts */
+li.nav-item  > a:after, li.nav-item:hover  > a:after {
+	font-family: "Ionicons";
+	content: '';
+	padding: 0px;
+	speak: none; /* Don't tuch */
+	-webkit-font-smoothing: antialiased; /* Don't tuch */
+	display: inline-block; /* Don't tuch */
+	font-size: 0px; /* Size of the icon */
+	color: #FFFFFF; /* Icon color */
+	position: relative; /* Don't tuch */
+	line-height:0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	border: none;
+	border-radius: 0px;
+	float: right;
+}
+
+/*Mobile ribbon Title text */
+.ribbon_text{
+display:block;
+text-align:left;
+width: 50px;
+height: 20px;
+margin-top: -32px;
+margin-left: 15px;
+font-family: Tahoma;
+font-weight: bold;
+font-size: 14px;
+color: #fff;
+}
+
+/* Mobil ribbon background color */
+.main{
+	background: #111; /* Old browsers */
+	background: -moz-linear-gradient(top,  #111 0%, #111 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#111), color-stop(100%,#111)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #111 0%,#111 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #111 0%,#111 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #111 0%,#111 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #111 0%,#111 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111', endColorstr='#111',GradientType=0 ); /* IE6-9 */
+}
+
+	/*Show Mobile menu ribbon */
+	.nav-mobile {
+		display:block;
+		
+
+	}
+	
+	/*Show Mobile menu ribbon */
+	.nav {
+  float: right;
+  padding: 5px 0 0;
+  width: 100%;
+}
+	
+	/* Dont show Mobile menu before you click ribbon/hamburger button */
+	.nav-list {
+		display:none;
+	}
+	
+	/* Make the entire ribbon clickable not just hamburger button */ 
+	.nav-item {
+		width:100%;
+		float:none;
+	}
+	
+	/* Mobile menu settings */
+	li.nav-item > a{
+	width:100%;
+	padding-left: 15px !important; /* Text padding from left */
+	padding-top: 16px !important; /* Text padding from top */
+	border: 0px solid #444 !important;
+	border-top: 1px solid #1D1D1B !important;
+	border-radius: 0px !important;
+	box-shadow:0px -0px 0px 0px #333 !important;
+	height: 52px !important;
+	margin-top: 0px !important;
+	margin-left: 0px !important;
+	font-family: Tahoma !important;
+	font-size: 14px !important;
+	font-weight: normal !important;
+	color: #fff !important;
+	text-align: left !important;
+	}
+	
+	/* Mobile Button/Links background colors */
+	li.nav-item > a, li.nav-item > a:hover  {
+	background: #222; /* Old browsers */
+	background: -moz-linear-gradient(top,  #222 0%, #222 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#222), color-stop(100%,#222)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #222 0%,#222 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #222 0%,#222 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #222 0%,#222 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #222 0%,#222 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#222', endColorstr='#222',GradientType=0 ); /* IE6-9 */
+	color: #fff;
+	}
+	
+	/* Don't show the bigscreen sub menu indicator in Mobile menu */
+	li.nav-item > a .ion-android-add{
+	display: none;
+	}
+	
+	/* Mobile sub menu settings */
+	.nav-submenu-item a{
+	width:100%;
+	text-align: left;
+	padding-left: 45px;
+	padding-top: 18px;
+	border: 0px solid #444;
+	border-top: 1px solid #1D1D1B  !important;
+	box-shadow: 0px -0px 0px 0px #333 !important;
+	border-radius: 0px;
+	height: 52px;
+	margin-top: 0px;
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: normal;
+	color: #fff;
+	}
+	
+	/* Mobile sub menu colors and hover colors */
+	.nav-submenu-item a, .nav-submenu-item a:hover {
+	background:#171515 !important;
+	color: #fff;
+	}
+	
+	/* Show the sub menu indicator in Mobile menu */
+	.nav-click {
+	display:block;
+	}
+	
+	/* Don't show sub menu on hover */
+	.nav-item:hover .nav-submenu {
+	display:none;
+	}
+	
+	/* Show Mobile sub menu */
+	.nav-submenu {
+	position:static;
+	width:100%;
+	overflow: auto;
+	}
+	
+.current_yes > a, .current_yes > a:hover{ 
+background: #FF4C4C !important; /* Old browsers */
+background: -moz-linear-gradient(top,  #FF4C4C 0%, #FF4C4C 100%) !important; /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FF4C4C), color-stop(100%,#FF4C4C)) !important; /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #FF4C4C 0%,#FF4C4C 100%) !important; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #FF4C4C 0%,#FF4C4C 100%) !important; /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #FF4C4C 0%,#FF4C4C 100%) !important; /* IE10+ */
+background: linear-gradient(to bottom,  #FF4C4C 0%,#FF4C4C 100%) !important; /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF4C4C', endColorstr='#FF4C4C',GradientType=0 !important); /* IE6-9 */
+color: #ffffff !important; /* Text active color for the Buttons/Links in active mode and on bigscreen menu*/
+/*Box-shadow turnd off none !important;*/
+}
+
+.sub_current_yes > a, .sub_current_yes > a:hover{
+background: #4C89D5 ; /* Old browsers */
+background: -moz-linear-gradient(top,  #4C89D5 0%, #4C89D5 100%) !important; /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4C89D5), color-stop(100%,#4C89D5)) ; /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #4C89D5 0%,#4C89D5 100%) ; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #4C89D5 0%,#4C89D5 100%) ; /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #4C89D5 0%,#4C89D5 100%) ; /* IE10+ */
+background: linear-gradient(to bottom,  #4C89D5 0%,#4C89D5 100%) ; /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C89D5', endColorstr='#4C89D5',GradientType=0 ); /* IE6-9 */
+color: #ffffff ; /* Text active color for the Buttons/Links in active mode and on bigscreen menu*/
+box-shadow: none !important; border-top: none !important;
+}
+
+/* Click button left border color on active link */
+.current_yes .nav-click{
+border-left: 1px solid #BF4141;
+}
+}
+
+/* Resize function/fix for returning to bigscreen */
+@media screen and (min-width:843px) {
+
+/* Restore the hover function and remove the click function in bigscreen menu (so that the submenu will be closed when you toggle back to bigscreen menu) */
+.nav-list {
+display: block !important;
+}
+	
+.nav-submenu{
+display: none !important;
+}
+	  
+.nav-item:hover .nav-submenu{
+display: block !important;
+}
+
+.nav-item:hover {
+display: block !important;
+}
+}
+
+
+
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
+*, html, body, button, input, textarea, select {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.CodeMirror * {
+  -moz-osx-font-smoothing: auto; }
+
+a {
+  color: #39464E;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+input, textarea, select {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+
+select {
+  cursor: pointer; }
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+fieldset, img {
+  border: 0; }
+
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal; }
+
+ol, ul {
+  list-style: none; }
+
+caption, th {
+  text-align: left; }
+
+
+
+abbr, acronym {
+  border: 0; }
+
+::-webkit-input-placeholder {
+  color: #abb9c2; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #abb9c2; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #abb9c2; }
+
+:-ms-input-placeholder {
+  color: #abb9c2; }
+
+.errorlist {
+  font-size: .85em; }
+  .errorlist li {
+    margin-bottom: 5px;
+    color: #f36e65; }
+
+html {
+  height: 100vh; }
+
+
+
+header {
+  height: 50px;
+  box-shadow: 0 0 5px rgba(57, 70, 78, 0.2);
+  position: relative;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; }
+  header h1 {
+    float: right;
+    height: 50px;
+    margin: 0 0 0 10px; }
+  header h1 a {
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    color: #7f94a1;
+    font-size: 12px;
+    padding-right: 45px;
+    margin-right: 10px;
+    background: url(/img/embeddable/logo-dark.png) 100% 50% no-repeat; }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+      header h1 a {
+        background: transparent url(/img/embeddable/logo-dark@2x.png) no-repeat 100% 50%;
+        background-size: 37px; } }
+    header h1 a:hover {
+      text-decoration: underline; }
+
+#actions li {
+  float: left; }
+  #actions li a {
+    display: block;
+    padding: 0 10px;
+    line-height: 50px;
+    height: 50px; }
+
+#actions .hl {
+  height: 3px;
+  width: 0;
+  background: #1C90F3;
+  position: absolute;
+  bottom: 0;
+  left: 0; }
+  #actions .hl.animated {
+    -moz-transition: all 0.15s;
+    /* FF3.6+ */
+    -webkit-transition: all 0.15s;
+    /* Chrome, Safari */
+    -o-transition: all 0.15s;
+    /* Opera */
+    -ms-transition: all 0.15s;
+    /* IE 9 */
+    transition: all 0.15s; }
+
+#tabs {
+  margin-top: 50px;
+  overflow: auto;
+  height: calc(100vh - 50px); }
+  #tabs .tCont {
+    padding: 10px;
+    display: none; }
+    #tabs .tCont.active {
+      display: block; }
+  #tabs pre {
+    background: transparent;
+    font-family: "Inconsolata", "Monaco", "Andale Mono", "Lucida Console", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace;
+    line-height: 1.55em;
+    font-size: 14px; }
+  #tabs #result {
+    padding: 0;
+    height: calc(100vh - 50px); }
+    #tabs #result iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      margin: 0; }
+
+#resources h3 {
+  font-size: 11px;
+  color: #7f94a1;
+  line-height: 23px;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+#resources ul {
+  border-top: solid 1px #cfd6d9; }
+  #resources ul li {
+    border-bottom: solid 1px #cfd6d9;
+    padding: 7px 0; }
+  #resources ul a {
+    color: #1C90F3; }
+
+/*
+
+JSFiddle Light (c) Oskar Krawczyk <oskar@jsfiddle.net>
+
+*/
+.hljs-comment,
+.hljs-quote {
+  color: #abb8c6; }
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-regexp,
+.hljs-deletion,
+.hljs-keyword,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-tag,
+.hljs-attr {
+  color: #e38800; }
+
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #8d44eb; }
+
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-tag,
+.hljs-attr {
+  color: #e77600; }
+
+.hljs-attribute {
+  color: #108de8; }
+
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #2AAB51; }
+
+.hljs-subst,
+.hljs-number {
+  color: #ED6E55; }
+
+.hljs-title,
+.hljs-section,
+.hljs-name {
+  color: #fa3d58; }
+
+.hljs {
+  display: block;
+  overflow-x: auto; }
+
+.hljs-emphasis {
+  font-style: italic; }
+
+.hljs-strong {
+  font-weight: bold; }
+
+header {
+  background-color: #ffffff; }
+
+

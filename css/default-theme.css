@@ -1,0 +1,147 @@
+
+.scrollToTop{
+  background-color: #c52d2f;
+}
+.scrollToTop:hover,.scrollToTop:focus{
+  background-color: #fff;
+  color: #c52d2f;
+  border: 1px solid #c52d2f;
+}
+.navbar-brand > span {
+  color: #c52d2f;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus { 
+  color: #c52d2f;
+}
+.navbar-default .navbar-nav > li > a:hover{
+  color: #c52d2f;
+}
+.slider_btn:hover,.slider_btn:focus{
+  border-color:#c52d2f;
+  color: #c52d2f;
+}
+.slides-navigation a::before,
+.slides-navigation a::after,
+.slides-navigation .icon-wrap::before,
+.slides-navigation .icon-wrap::after {
+  background: #c52d2f;
+}
+.slides-pagination a {
+  border: 2px solid #c52d2f;
+}
+.heading h2 {
+  text-transform: capitalize;
+}
+.heading p {
+  text-align: left;
+}
+.panel-title a:hover{
+  color: #c52d2f;   
+}
+.panel-title a span{
+  color: #c52d2f;   
+}
+
+.heading {
+  text-align: left;
+}
+
+.service_icon{
+  background-color: #c52d2f;
+}
+
+.single_service:hover .service_icon{  
+  color: #c52d2f;
+  border: 2px solid #c52d2f;
+  background-color: #fff;
+}
+.single_service:hover .service_title{
+  color: #c52d2f;
+}
+.single_service > .service_title:after {
+  background-color: #c52d2f;
+}
+.heading h3 {
+  border-bottom: 5px solid #c52d2f;
+}
+.fa-2x {
+  color: #c52d2f;
+}
+.single_team span {
+  color: #c52d2f;
+}
+.team_social a:hover,.team_social a:focus{
+  background-color: #c52d2f;
+}
+.slick-prev, .slick-next {
+  background-color: #c52d2f;
+}
+.single_price .price {
+  background-color: #c52d2f; 
+}
+.price_btn {
+  background-color: #c52d2f;
+  border: 1px solid #c52d2f;
+}
+.price_btn:hover{
+  color: #c52d2f !important;
+}
+.business_price {
+  background-color: #c52d2f !important;
+}
+.business_price .price_btn{ 
+  color: #c52d2f !important;
+}
+.post_commentbox a:hover, .post_commentbox span:hover{
+  color: #c52d2f;
+}
+.read_more{
+  color: #c52d2f; 
+}
+.read_more:hover,.read_more:focus{
+  border-bottom: 2px solid #c52d2f;
+}
+.testi_media .media-body span {
+  color: #c52d2f;
+}
+.testimonial_slider .slick-dots li.slick-active button{
+  background: none repeat scroll 0 0 #c52d2f;  
+}
+.submit_btn {
+  background-color: #c52d2f;
+}
+.submit_btn:hover{
+  color: #c52d2f;
+  border-color: #c52d2f;
+}
+.form-control:focus {
+  border-color: #c52d2f;
+}
+.wagwep-container ul#portfolio-filter a:hover{
+  background-color: #c52d2f;
+}
+.wagwep-container ul#portfolio-filter li.current a {
+  background:#c52d2f;  
+}
+.single_contact_feaured > i {
+  color: #c52d2f;
+}
+.subscr_btn {
+  background-color: #c52d2f;
+}
+.footer_left > p a {
+  color: #c52d2f;
+  font-weight: bold;
+}
+.social_nav li a:hover{
+  color: #c52d2f;
+  border-color: #c52d2f; 
+}
+.panel-default .in{
+  border-color: #c52d2f;
+  border-left: 5px solid #c52d2f;
+}
+.about_slider .slick-dots li.slick-active button:before {
+  color: #c52d2f;
+}
